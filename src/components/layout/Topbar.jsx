@@ -18,12 +18,10 @@ import {
   useTheme,
   Paper,
   Button,
-  Stack,
   Tooltip,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
   IconButton as MuiIconButton
 } from '@mui/material';
@@ -35,11 +33,8 @@ import {
   Logout as LogoutIcon,
   Person as PersonIcon,
   Dashboard as DashboardIcon,
-  MarkEmailRead as MarkEmailReadIcon,
   NotificationsActive as NotificationsActiveIcon,
-  MoreVert as MoreVertIcon,
   ArrowForward as ArrowForwardIcon,
-  CheckCircle as CheckCircleIcon,
   ShoppingCart as ShoppingCartIcon
 } from '@mui/icons-material';
 

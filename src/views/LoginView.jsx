@@ -4,7 +4,6 @@ import { Box, Button, Divider, IconButton, InputAdornment, Link as MuiLink, Stac
 import { Google as GoogleIcon, GitHub as GitHubIcon, Visibility, VisibilityOff } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import SubmitButton from '../components/SubmitButton';
-import AuthContainer from '../components/AuthContainer';
 
 const MotionButton = motion(Button);
 

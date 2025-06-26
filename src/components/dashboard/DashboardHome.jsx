@@ -5,14 +5,10 @@ import {
   Paper, 
   Typography, 
   useTheme,
-  Card,
-  CardContent,
-  CardHeader,
   Divider,
   List,
   ListItem,
   ListItemIcon,
-  ListItemText,
   Avatar,
   LinearProgress
 } from '@mui/material';
