@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  IconButton, 
-  Typography, 
-  Badge, 
-  Box, 
-  Avatar, 
-  Menu, 
-  MenuItem, 
-  Divider, 
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Badge,
+  Box,
+  Avatar,
+  Menu,
+  MenuItem,
+  Divider,
   ListItemIcon,
   ListItemText,
   List,
@@ -103,11 +103,11 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
   const [selectedNotification, setSelectedNotification] = useState(null);
   const [messageModalOpen, setMessageModalOpen] = useState(false);
   const [notificationModalOpen, setNotificationModalOpen] = useState(false);
-  
+
   const open = Boolean(anchorEl);
   const messageOpen = Boolean(messageAnchorEl);
   const notificationOpen = Boolean(notificationAnchorEl);
-  
+
   // Unread counts
   const unreadMessages = messages.filter(msg => !msg.read).length;
   const unreadNotifications = notifications.filter(notif => !notif.read).length;
@@ -143,11 +143,11 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleMessageMenuOpen = (event) => {
     setMessageAnchorEl(event.currentTarget);
   };
-  
+
   const handleNotificationMenuOpen = (event) => {
     setNotificationAnchorEl(event.currentTarget);
   };
@@ -180,15 +180,15 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
         >
           <MenuIcon />
         </IconButton>
-        
+
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
           Dashboard
         </Typography>
-        
+
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           {/* Messages Dropdown */}
           <Tooltip title="Messages">
-            <IconButton 
+            <IconButton
               color="inherit"
               onClick={handleMessageMenuOpen}
               aria-controls={messageOpen ? 'messages-menu' : undefined}
@@ -200,10 +200,10 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
               </Badge>
             </IconButton>
           </Tooltip>
-          
+
           {/* Notifications Dropdown */}
           <Tooltip title="Notifications">
-            <IconButton 
+            <IconButton
               color="inherit"
               onClick={handleNotificationMenuOpen}
               aria-controls={notificationOpen ? 'notifications-menu' : undefined}
@@ -215,7 +215,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
               </Badge>
             </IconButton>
           </Tooltip>
-          
+
           {/* Profile Menu */}
           <Tooltip title="Account settings">
             <IconButton
@@ -226,10 +226,10 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
             >
-              <Avatar 
-                sx={{ 
-                  width: 32, 
-                  height: 32, 
+              <Avatar
+                sx={{
+                  width: 32,
+                  height: 32,
                   bgcolor: theme.palette.primary.main,
                   fontSize: '0.875rem',
                   fontWeight: 500
@@ -241,7 +241,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           </Tooltip>
         </Box>
       </Toolbar>
-      
+
       {/* Messages Menu */}
       <Menu
         anchorEl={messageAnchorEl}
@@ -257,7 +257,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.1))',
             '&:before': {
-              content: '\"\"',
+              content: '',
               display: 'block',
               position: 'absolute',
               top: 0,
@@ -283,14 +283,14 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           <List sx={{ width: '100%', maxHeight: 400, overflow: 'auto', p: 0 }}>
             {messages.map((message) => (
               <React.Fragment key={message.id}>
-                <ListItem 
-                  alignItems="flex-start" 
+                <ListItem
+                  alignItems="flex-start"
                   onClick={() => handleMessageClick(message)}
                   sx={{
                     borderRadius: 1,
                     mb: 0.5,
                     bgcolor: !message.read ? 'action.hover' : 'transparent',
-                    '&:hover': { 
+                    '&:hover': {
                       bgcolor: 'action.hover',
                       transform: 'translateX(2px)',
                     },
@@ -315,8 +315,8 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
                       </Box>
                     }
                     secondary={
-                      <Typography 
-                        variant="body2" 
+                      <Typography
+                        variant="body2"
                         color="text.secondary"
                         sx={{
                           display: '-webkit-box',
@@ -381,7 +381,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           <List sx={{ width: '100%', maxHeight: 400, overflow: 'auto', p: 0 }}>
             {notifications.map((notification) => (
               <React.Fragment key={notification.id}>
-                <ListItem 
+                <ListItem
                   key={notification.id}
                   onClick={() => handleNotificationClick(notification)}
                   alignItems="flex-start"
@@ -389,7 +389,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
                     borderRadius: 1,
                     mb: 0.5,
                     bgcolor: !notification.read ? 'action.hover' : 'transparent',
-                    '&:hover': { 
+                    '&:hover': {
                       bgcolor: 'action.hover',
                       transform: 'translateX(2px)',
                     },
@@ -414,8 +414,8 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
                       </Box>
                     }
                     secondary={
-                      <Typography 
-                        variant="body2" 
+                      <Typography
+                        variant="body2"
                         color="text.secondary"
                         sx={{
                           display: '-webkit-box',
@@ -452,8 +452,8 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           }
         }}
       >
-        <DialogTitle sx={{ 
-          display: 'flex', 
+        <DialogTitle sx={{
+          display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           borderBottom: `1px solid ${theme.palette.divider}`,
@@ -474,27 +474,27 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
               {selectedNotification?.title}
             </Typography>
           </Box>
-          <MuiIconButton 
+          <MuiIconButton
             onClick={handleCloseNotificationModal}
             size="small"
             sx={{ color: 'text.secondary' }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </MuiIconButton>
         </DialogTitle>
         <DialogContent sx={{ pt: 3, pb: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-            <Avatar 
-              sx={{ 
-                width: 40, 
-                height: 40, 
-                mr: 2, 
-                bgcolor: 
+            <Avatar
+              sx={{
+                width: 40,
+                height: 40,
+                mr: 2,
+                bgcolor:
                   selectedNotification?.type === 'order' ? 'primary.main' :
-                  selectedNotification?.type === 'user' ? 'success.main' :
-                  'warning.main'
+                    selectedNotification?.type === 'user' ? 'success.main' :
+                      'warning.main'
               }}
             >
               {selectedNotification?.title?.charAt(0) || '!'}
@@ -523,7 +523,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           )}
         </DialogContent>
         <DialogActions sx={{ px: 3, py: 2, borderTop: `1px solid ${theme.palette.divider}` }}>
-          <Button 
+          <Button
             onClick={handleCloseNotificationModal}
             variant="outlined"
             size="small"
@@ -531,7 +531,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           >
             Close
           </Button>
-          <Button 
+          <Button
             variant="contained"
             size="small"
             sx={{ textTransform: 'none' }}
@@ -559,8 +559,8 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           }
         }}
       >
-        <DialogTitle sx={{ 
-          display: 'flex', 
+        <DialogTitle sx={{
+          display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           borderBottom: `1px solid ${theme.palette.divider}`,
@@ -570,13 +570,13 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           <Typography variant="h6" fontWeight={600}>
             {selectedMessage?.sender}
           </Typography>
-          <MuiIconButton 
+          <MuiIconButton
             onClick={handleCloseMessageModal}
             size="small"
             sx={{ color: 'text.secondary' }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </MuiIconButton>
         </DialogTitle>
@@ -599,7 +599,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           </Typography>
         </DialogContent>
         <DialogActions sx={{ px: 3, py: 2, borderTop: `1px solid ${theme.palette.divider}` }}>
-          <Button 
+          <Button
             onClick={handleCloseMessageModal}
             variant="outlined"
             size="small"
@@ -607,7 +607,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
           >
             Close
           </Button>
-          <Button 
+          <Button
             variant="contained"
             size="small"
             sx={{ textTransform: 'none' }}

@@ -30,14 +30,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  ...theme.mixins.toolbar,
-}));
-
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
   { text: 'Users', icon: <PeopleIcon />, path: '/dashboard/users' },
@@ -53,7 +45,6 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const drawer = (
     <div>
