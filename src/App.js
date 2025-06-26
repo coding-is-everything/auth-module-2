@@ -5,10 +5,7 @@ import {
   BrowserRouter as Router, 
   Routes, 
   Route, 
-  useNavigate, 
-  useLocation, 
   Navigate, 
-  Outlet 
 } from 'react-router-dom';
 
 // Import theme
