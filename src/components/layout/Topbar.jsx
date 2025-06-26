@@ -355,7 +355,7 @@ const Topbar = ({ handleDrawerToggle, onLogout }) => {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.1))',
             '&:before': {
-              content: '\"\"',
+              content: '',
               display: 'block',
               position: 'absolute',
               top: 0,

@@ -11,7 +11,6 @@ import {
   Box,
   Typography,
   useTheme,
-  useMediaQuery
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
@@ -25,7 +24,6 @@ import {
   Assessment as AssessmentIcon,
   AccountCircle as AccountCircleIcon
 } from '@mui/icons-material';
-import { styled } from '@mui/material/styles';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
